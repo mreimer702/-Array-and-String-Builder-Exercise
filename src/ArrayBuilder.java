@@ -1,7 +1,5 @@
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Collections;
-import java.util.List;
 
 public class ArrayBuilder {
 
@@ -16,10 +14,13 @@ public class ArrayBuilder {
         System.out.println(Arrays.toString(nums));
 
         // Reverse the Array
-        Integer[] numObjects = Arrays.stream(nums).boxed().toArray(Integer[]::new);
-        List<Integer> numList = Arrays.asList(numObjects);
-        Collections.reverse(numList);
-        System.out.println("Reversed: " + numList);
+        int [] reverse = new int[5];
+        int index = 0;
+        for (int i = nums.length - 1; i >= 0; i--){
+            reverse[index] = nums[i];
+            index += 1;
+        }
+        System.out.println("Reversed Array: " + Arrays.toString(reverse));
 
         //Find the Maximum and Minimum Values
         int max = nums[0];
